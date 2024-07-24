@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>The Computer Mouse</title>
 </head>
 <body>
     <header>
         <h1>Mouse</h1>
         <nav>
-
             <ul>
                 <li><a href="#video1">History</a></li>
                 <li><a href="#video2">Build</a></li>
                 <li><a href="#video3">Types</a></li>
             </ul>
-
         </nav>
-
         <a href="#" class="logo-link">
             <img src="images/mouse_logo.png" alt="Logo" class="logo">
         </a>
-
     </header>
     
     <main>
-
         <div class="hamburger-menu">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -34,6 +29,7 @@
         </div>
         
         <section id="video1">
+            <h2>History</h2> 
             <div class="video-container">
                 <video autoplay muted loop id="introVideo">
                     <source src="video/VIDEOINTRO_1.mp4" type="video/mp4">
@@ -44,125 +40,115 @@
         </section>
         
         <section id="video2">
+            <h2>Build</h2> 
             <div class="video-container">
-                <video autoplay muted loop id="secondVideo">
+                <video autoplay muted loop id="buildVideo">
                     <source src="video/VIDEOINTRO_2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
                 <div class="overlay" data-target="#buildSection">Learn About the Build</div>
-
             </div>
-
         </section>
 
         <section id="video3">
+            <h2>Types</h2> 
             <div class="video-container">
-                <video autoplay muted loop id="secondVideo">
+                <video autoplay muted loop id="typesVideo">
                     <source src="video/VIDEOINTRO_3.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
                 <div class="overlay" data-target="#typesOfMouse">Types of Mouse</div>
-
             </div>
-
         </section>
 
-    <section id="historySection">
-        <!-- Part 1 of the History -->
-        <div class="history-part">
-            <div class="history-image fade-in-slide-up embedded-media" id="imageToVideo">
-                <img src="images/mouse_history1.png" alt="History of the Computer Mouse" id="historyImage" style="width: 100%; height: auto;">
-                <div class="media-overlay" style="display: none;">Click to toggle</div>
-
-            </div>
-            <div class="history-text fade-in-slide-up">
-                <h2>History of the Mouse</h2>
-                <p>The history of the computer mouse, like many great innovations in technology, begins with a visionary idea and a problem-solving approach. The concept of a handheld device that could control a computer cursor was first brought to life by Douglas Engelbart in 1964. Engelbart, working at the Stanford Research Institute (SRI), aimed to create a way for users to interact more intuitively with computers.</p>
-                <p>His initial design, known as the "X-Y Position Indicator for a Display System," was a wooden shell housing two metal wheels that rolled on the surface to track motion. This prototype was demonstrated publicly during the now-famous "Mother of All Demos" in 1968, showcasing real-time text editing, video conferencing, and the revolutionary idea of windows and a pointer controlled by the mouse.</p>
-            </div>
-        </div>
-
-    
-        <!-- Part 2 of the History -->
-        <div class="history-part">
-            <div class="history-text fade-in-slide-up">
-                <h2>Continuing the Journey</h2>
-                <p>As technology evolved, so did the mouse. The original bulky and somewhat clunky design underwent significant refinements. In 1972, Bill English, who had worked with Engelbart at SRI, developed the "Ball Mouse" while at Xerox PARC. This new version replaced the wheels with a ball that could roll in any direction, providing smoother movement and more precise control.</p>
-                <p>This innovation laid the groundwork for the proliferation of graphical interfaces, which are central to personal computing today. The mouse truly became a household item with the advent of the Apple Macintosh in 1984, which included a mouse in its standard setup. Since then, the mouse has transitioned through various technologies, from mechanical to optical sensors, gaining wireless capabilities, and adapting to ergonomic needs, reflecting the dynamic landscape of personal computing usage.</p>
-            </div>
-            <div class="history-image fade-in-slide-up embedded-media" id="imageToVideo2">
-                <img src="images/mouse_history2.png" alt="Continued History of the Computer Mouse" id="historyImage" style="width: 100%; height: auto;" >
-            </div>
-        </div>
-    </section>
-    
-
-    <section id="buildSection">
-        <!-- Part 1 of the Build Section -->
-        <div class="build-part">
-            <div class="build-image fade-in-slide-up" id="firstBuildImage" data-alt-src="images/MouseBuild_1.jpg">
-                <img src="images/GamingMouse_2.png" alt="Build of the Computer Mouse">
-            </div>
-            <div class="build-text fade-in-slide-up">
-                <h2>The Build Of A Modern Mouse</h2>
-                <p>Over the years, the computer mouse has undergone significant transformations, evolving from simple mechanical devices to sophisticated optical instruments that offer superior accuracy and minimal maintenance. Today's mice incorporate advanced components like circuit boards, optical sensors, scroll wheels, and buttons, all housed within ergonomically designed shells that conform to the user's hand, significantly reducing strain and enhancing usability.</p>
-                <p>This ergonomic focus is backed by extensive research aimed at improving user comfort during prolonged periods of use, reflecting ongoing advancements in human-computer interaction.</p>
-            </div>
-        </div>
-    
-        <!-- Part 2 of the Build Section -->
-        <div class="build-part">
-            <div class="build-text fade-in-slide-up">
-                <h2>The Future</h2>
-                <p>As we look to the future, the design of computer mice is expected to further integrate with emerging technologies such as gesture recognition and haptics, providing even more intuitive ways for users to interact with their digital environments.</p>
-                <p>These innovations promise to continue the tradition of enhancing productivity and user experience, cementing the role of the mouse as an essential tool in the ever-evolving landscape of personal computing technology.</p>
-            </div>
-            <div class="build-image fade-in-slide-up" id="secondBuildImage" data-alt-src="images/mouse_history1.png">
-                <img src="images/mouse_history2.png" alt="Continued History of the Computer Mouse">
-            </div>
-        </div>
-    </section>
-    
-    <section id="typesOfMouse">
-        <div class="type-part">
-            <div class="type-image fade-in-slide-up">
-                <div id="mouseSlider" class="mouse-slider">
-                    <button class="slide-btn prev-btn">&#10094;</button> <!-- Left arrow button -->
-                    <div class="slider-images">
-                        <img src="images/opmouse_1.png" alt="Optical Mouse" class="slider-image" style="display: block;">
-                        <img src="images/opmouse_2.png" alt="Gaming Mouse" class="slider-image">
-                        <img src="images/opmouse_3.png" alt="Ergonomic Mouse" class="slider-image">
-                    </div>
-                    <button class="slide-btn next-btn">&#10095;</button> <!-- Right arrow button -->
+        <section id="historySection">
+            <!-- Part 1 of the History -->
+            <div class="history-part">
+                <div class="history-image fade-in-slide-up embedded-media" id="imageToVideo">
+                    <img src="images/mouse_history1.png" alt="History of the Computer Mouse" id="historyImage1" style="width: 100%; height: auto;">
+                </div>
+                <div class="history-text fade-in-slide-up">
+                    <h2>History of the Mouse</h2>
+                    <p>The history of the computer mouse, like many great innovations in technology, begins with a visionary idea and a problem-solving approach. The concept of a handheld device that could control a computer cursor was first brought to life by Douglas Engelbart in 1964. Engelbart, working at the Stanford Research Institute (SRI), aimed to create a way for users to interact more intuitively with computers.</p>
+                    <p>His initial design, known as the "X-Y Position Indicator for a Display System," was a wooden shell housing two metal wheels that rolled on the surface to track motion. This prototype was demonstrated publicly during the now-famous "Mother of All Demos" in 1968, showcasing real-time text editing, video conferencing, and the revolutionary idea of windows and a pointer controlled by the mouse.</p>
                 </div>
             </div>
 
-            <div class="type-text fade-in-slide-up">
-                <h2>Optical Mouse</h2>
-                <p>Optical mice use LED light to detect movement relative to the surface, making them more precise and reliable than the older ball-based mice. This type of mouse is widely used in both consumer and professional computing environments due to its low cost and high performance.</p>
+            <!-- Part 2 of the History -->
+            <div class="history-part">
+                <div class="history-text fade-in-slide-up">
+                    <h2>Continuing the Journey</h2>
+                    <p>As technology evolved, so did the mouse. The original bulky and somewhat clunky design underwent significant refinements. In 1972, Bill English, who had worked with Engelbart at SRI, developed the "Ball Mouse" while at Xerox PARC. This new version replaced the wheels with a ball that could roll in any direction, providing smoother movement and more precise control.</p>
+                    <p>This innovation laid the groundwork for the proliferation of graphical interfaces, which are central to personal computing today. The mouse truly became a household item with the advent of the Apple Macintosh in 1984, which included a mouse in its standard setup. Since then, the mouse has transitioned through various technologies, from mechanical to optical sensors, gaining wireless capabilities, and adapting to ergonomic needs, reflecting the dynamic landscape of personal computing usage.</p>
+                </div>
+                <div class="history-image fade-in-slide-up embedded-media" id="imageToVideo2">
+                    <img src="images/mouse_history2.png" alt="Continued History of the Computer Mouse" id="historyImage2" style="width: 100%; height: auto;" >
+                </div>
             </div>
-        </div>
-    
-        <div class="type-part">
-            <div class="type-text fade-in-slide-up">
-                <h2>Gaming Mouse</h2>
-                <p>Gaming mice are designed with high sensitivity, additional buttons, and customizable features to enhance the gaming experience...</p>
+        </section>
+
+        <section id="buildSection">
+            <!-- Part 1 of the Build Section -->
+            <div class="build-part">
+                <div class="build-image fade-in-slide-up" id="firstBuildImage" data-alt-src="images/MouseBuild_1.jpg">
+                    <img src="images/GamingMouse_2.png" alt="Build of the Computer Mouse">
+                </div>
+                <div class="build-text fade-in-slide-up">
+                    <h2>The Build Of A Modern Mouse</h2>
+                    <p>Over the years, the computer mouse has undergone significant transformations, evolving from simple mechanical devices to sophisticated optical instruments that offer superior accuracy and minimal maintenance. Today's mice incorporate advanced components like circuit boards, optical sensors, scroll wheels, and buttons, all housed within ergonomically designed shells that conform to the user's hand, significantly reducing strain and enhancing usability.</p>
+                    <p>This ergonomic focus is backed by extensive research aimed at improving user comfort during prolonged periods of use, reflecting ongoing advancements in human-computer interaction.</p>
+                </div>
             </div>
-            <div class="type-image fade-in-slide-up">
-                <div id="mouseSlider" class="mouse-slider">
-                <button class="slide-btn prev-btn">&#10094;</button>
-                <img src="images/GamingMouse_1.png" alt="Gaming Mouse 1" class="slider-image" style="display: block;">
-                <img src="images/GamingMouse_2.png" alt="Gaming Mouse 2" class="slider-image">
-                <img src="images/mouse_logo.png" alt="Gaming Mouse 3" class="slider-image">
-                <button class="slide-btn next-btn">&#10095;</button>
+
+            <!-- Part 2 of the Build Section -->
+            <div class="build-part">
+                <div class="build-text fade-in-slide-up">
+                    <h2>The Future</h2>
+                    <p>As we look to the future, the design of computer mice is expected to further integrate with emerging technologies such as gesture recognition and haptics, providing even more intuitive ways for users to interact with their digital environments.</p>
+                    <p>These innovations promise to continue the tradition of enhancing productivity and user experience, cementing the role of the mouse as an essential tool in the ever-evolving landscape of personal computing technology.</p>
+                </div>
+                <div class="build-image fade-in-slide-up" id="secondBuildImage" data-alt-src="images/mouse_history1.png">
+                    <img src="images/mouse_history2.png" alt="Continued History of the Computer Mouse">
+                </div>
             </div>
-        </div>
-        
-    </section>
-    
-        
+        </section>
+
+        <section id="typesOfMouse">
+            <div class="type-part">
+                <div class="type-image fade-in-slide-up">
+                    <div id="mouseSlider1" class="mouse-slider">
+                        <button class="slide-btn prev-btn">&#10094;</button> <!-- Left arrow button -->
+                        <div class="slider-images">
+                            <img src="images/opmouse_1.png" alt="Optical Mouse" class="slider-image" style="display: block;">
+                            <img src="images/opmouse_2.png" alt="Gaming Mouse" class="slider-image">
+                            <img src="images/opmouse_3.png" alt="Ergonomic Mouse" class="slider-image">
+                        </div>
+                        <button class="slide-btn next-btn">&#10095;</button> <!-- Right arrow button -->
+                    </div>
+                </div>
+
+                <div class="type-text fade-in-slide-up">
+                    <h2>Optical Mouse</h2>
+                    <p>Optical mice use LED light to detect movement relative to the surface, making them more precise and reliable than the older ball-based mice. This type of mouse is widely used in both consumer and professional computing environments due to its low cost and high performance.</p>
+                </div>
+            </div>
+
+            <div class="type-part">
+                <div class="type-text fade-in-slide-up">
+                    <h2>Gaming Mouse</h2>
+                    <p>Gaming mice are designed with high sensitivity, additional buttons, and customizable features to enhance the gaming experience...</p>
+                </div>
+                <div class="type-image fade-in-slide-up">
+                    <div id="mouseSlider2" class="mouse-slider">
+                        <button class="slide-btn prev-btn">&#10094;</button>
+                        <img src="images/GamingMouse_1.png" alt="Gaming Mouse 1" class="slider-image" style="display: block;">
+                        <img src="images/GamingMouse_2.png" alt="Gaming Mouse 2" class="slider-image">
+                        <img src="images/mouse_logo.png" alt="Gaming Mouse 3" class="slider-image">
+                        <button class="slide-btn next-btn">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <div id="cpsGame">
             <div class="settings">
@@ -192,26 +178,23 @@
                 </div>
             </div>
         </div>
-        
-        
-        
+
         <div id="resultModal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2>Your Results: YOU ARE A....</h2>
                 <p id="resultText">You clicked <span id="finalClicks"></span> times!</p>
                 <p>Your CPS was: <span id="finalCPS"></span></p>
-                <img id="resultImage" src="" alt="Result Image">
+                <img id="resultImage" src="images/placeholder.png" alt="Result Image">
             </div>
         </div>
-        
+
         <footer>
             <div class="qr-code-container">
                 <img src="images/qr-code.png" alt="QR Code" style="width: 150px; height: auto;">
             </div>
         </footer>
     </main>
-    
 
     <script src="script.js"></script>
 </body>
