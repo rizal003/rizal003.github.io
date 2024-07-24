@@ -1,0 +1,452 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}   
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #978f8f;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    transition: top 0.3s;
+    background: transparent;
+    color: #ffffff;
+    padding: 20px 50px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    position: relative;
+    margin-right: auto;
+}
+
+.logo {
+    height: 50px;
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.history-text h2, .build-text h2, .type-text h2{
+    color: #ff4f4f; /* Change this to your desired color */
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8dc5db;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    border: 5px solid #808080;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+
+.overlay:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+#video1 video, #video2 video, #video3 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+}
+
+/* Initially set to row for side-by-side layout */
+#historySection, #buildSection, #typesOfMouse {
+    display: none;
+    flex-direction: column; /* Ensures side by side arrangement */
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Container for each part that ensures the text and image are side by side */
+.history-part, .build-part, .type-part {
+    display: flex;
+    flex-direction: row; /* Ensures side by side arrangement */
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: space-between; /* Distributes space between text and image */
+    width: 100%; /* Takes full width of the section */
+}
+
+/* Common styles for text and image containers within each part */
+.history-image, .history-text, .build-image, .build-text, .type-image, .type-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensures content is centered within each container */
+    height: 100%; /* Ensures containers take full height of their parent */
+    flex: 1; /* Each takes half of the container */
+    padding: 0 20px; /* Adds padding inside each container */
+}
+
+/* Common image styles */
+.history-image img, .build-image img, .type-image{
+    width: 100%; /* Full width of their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #historySection, #buildSection, #buildSectionPart2 {
+        flex-direction: column; /* Stack sections vertically on mobile */
+    }
+
+    .history-part, .build-part {
+        flex-direction: column-reverse; /* Stack text above image on mobile */
+    }
+
+    .history-image, .history-text, .build-image, .build-text {
+        padding: 0;
+    }
+
+    .history-image img, .build-image img {
+        margin-bottom: 20px; /* Space between the image and the text on mobile */
+    }
+}
+
+#imageToVideo:hover, #imageToVideo2:hover{
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Add shadow for depth */
+}
+
+
+
+
+.embedded-media {
+    width: 100%;   /* Adjust width as needed, can be in px or % */
+    height: 600px; /* Set a fixed height */
+    margin: 20px auto; /* Centering if necessary */
+    box-shadow: 0px 4px 8px rgba(240, 74, 74, 0.3); /* Optional for styling */
+    border-radius: 10px; /* Optional for rounded corners */
+    overflow: hidden; /* Ensures no overflow */
+}
+
+.embedded-media img, .embedded-media iframe {
+    width: 100%; /* Ensures full container width */
+    height: 100%; /* Ensures full container height */
+    object-fit: cover; /* Covers the entire area, adjust as needed */
+}
+
+
+@media (max-width: 768px) {
+    .embedded-media {
+        height: auto; /* Responsive height based on aspect ratio */
+    }
+    .embedded-media iframe {
+        object-fit: contain; /* Adjusts size to fit within the container without cutting off */
+    }
+}
+
+
+
+.fade-in-slide-up {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly off-position to enhance the effect */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Smooth transition for fade and slide */
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Normalize position when it becomes visible */
+}
+
+
+.mouse-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Maximum width of the slider */
+    margin: 20px auto; /* Center the slider horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    border-radius: 10px; /* Rounded corners for aesthetics */
+    overflow: hidden; /* Prevents any part of the images from overflowing */
+}
+
+.slider-images {
+    position: relative;
+    width: 100%; /* Ensures slider images container takes full width of its parent */
+}
+
+.slider-image {
+    width: 100%; /* Each image will take the full width of its container */
+    height: 400px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures images cover the space, cropping as needed without distortion */
+    display: none; /* Hide all images by default */
+}
+
+.slider-image:first-child {
+    display: block; /* Only the first image is visible initially */
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center the button vertically */
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for buttons */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10; /* Ensure the buttons are above all other elements */
+}
+
+.prev-btn {
+    left: 10px; /* Position the previous button on the left side */
+}
+
+.next-btn {
+    right: 10px; /* Position the next button on the right side */
+}
+
+
+
+
+
+
+
+
+/* GAME */
+
+#cpsGame {
+    text-align: center;
+    padding: 20px;
+    background-color: #6a6d70; /* Light grey background for the game area */
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings {
+    margin-bottom: 20px;
+}
+
+.settings label, .settings select, .settings button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: #e7e9eb;
+    border: none;
+}
+
+.settings button {
+    background-color: #4caf51; /* Green background for buttons */
+    color: white;
+    cursor: pointer;
+}
+
+.settings button:hover {
+    background-color: #a04545; /* Darker green on hover */
+}
+
+.click-box {
+    position: relative; /* Needed to position dots absolutely within the box */
+    padding: 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    user-select: none;
+    overflow: hidden; /* Ensures dots don't show outside the box */
+}
+
+.dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000; /* Use a bright color to ensure visibility */
+    border-radius: 50%;
+    transition: transform 0.5s, opacity 0.5s; /* Transition for visual effect */
+    z-index: 100; /* Make sure dots are not hidden behind other elements */
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: scale(1.5); }
+}
+
+
+.click-box:hover {
+    background-color: #0056b3;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    background: #ffffff; /* White background for stats */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box label {
+    font-size: 14px;
+    color: #6a6d70;
+}
+
+.stat-box span {
+    display: block;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Slightly darker background for better focus on the modal */
+}
+
+.modal-content {
+    background-color: #494646;
+    margin: 10% auto;
+    padding: 30px;
+    border: none;
+    width: 40%; /* Slightly narrower for a more modern look */
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19); /* Soft shadow for 3D effect */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+}
+
+.modal-content h2 {
+    color: #dddddd; /* Dark gray for headings */
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: #ffffff; /* Lighter gray for text */
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.close-button {
+    color: #888888; /* More neutral color */
+    float: right;
+    font-size: 36px; /* Larger close button */
+    font-weight: bold;
+    margin: -20px -20px 0 0; /* Adjust position */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #cc0000; /* Red color on hover for a universal 'close' cue */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.show {
+    display: block; /* Show the modal */
+    animation: fadeIn 0.3s; /* Fade in effect when showing the modal */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+#resultImage {
+    width: 80%;
+    margin-top: 20px;
+}
+
+#cpsGame .settings {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#cpsGame select {
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+
+
+
