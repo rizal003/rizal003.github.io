@@ -1,111 +1,153 @@
-/* Basic Reset */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}   
-
-
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #978f8f;
-    line-height: 1.6;
-    overflow-x: hidden;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
 }
 
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; 
+    color: #978f8f; 
+    line-height: 1.6; 
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Header Styles */
 header {
-    transition: top 0.3s;
-    background: transparent;
-    color: #ffffff;
-    padding: 20px 50px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    transition: top 0.3s; /* Smooth transition for the header movement */
+    background: transparent; 
+    color: #ffffff; 
+    padding: 20px 50px; /* Padding around the header content */
+    text-align: center; /* Centers the text inside the header */
+    position: fixed; /* Keeps the header at the top regardless of scrolling */
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; /* Keeps the header above other content */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    padding: 10px; 
+}
+
+.bar {
+    width: 35px; /* each bar */
+    height: 5px; /* each bar */
+    background-color: #ffffff; 
+    margin: 6px 0; /* Spacing between bars */
+    transition: 0.4s; 
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Shows the hamburger menu on small screens */
+    }
+
+    nav ul {
+        position: fixed; /* Fixes the navigation to the viewport */
+        width: 100%; 
+        height: 100vh; 
+        top: 0;
+        left: -100%; /* Initially off-screen to the left */
+        background: #333; 
+        flex-direction: column; /* Stacks menu items vertically */
+        justify-content: center; 
+        align-items: center; 
+        transition: 0.3s; /
+    }
+
+    nav ul li {
+        display: block; 
+        text-align: center; 
+        margin: 10px 0; 
+    }
+
+    nav ul li a {
+        font-size: 24px;
+    }
 }
 
 .logo-link {
     position: relative;
-    margin-right: auto;
+    margin-right: auto; 
 }
 
 .logo {
-    height: 50px;
+    height: 50px; 
 }
 
 h1 {
-    flex-grow: 1;
-    text-align: left;
+    flex-grow: 1; /* Allows the title to grow and fill available space */
+    text-align: left; 
 }
 
-.history-text h2, .build-text h2, .type-text h2{
-    color: #ff4f4f; /* Change this to your desired color */
+.history-text h2, .build-text h2, .type-text h2 {
+    color: #ff4f4f; 
 }
-
 
 nav ul {
-    list-style: none;
-    margin: 0;
+    list-style: none; 
+    margin: 0; 
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    display: inline; /* Displays list items in a row */
+    margin: 0 10px; 
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 18px; 
+    transition: color 0.3s; /* Smooth color transition on hover */
 }
 
 nav ul li a:hover {
-    color: #8dc5db;
+    color: #8dc5db; /* Changes link color on hover */
 }
 
 main {
-    margin-top: 100px;
+    margin-top: 100px; /* Adds space between the header and the main content */
 }
 
 .video-container {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    border: 5px solid #808080;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+    position: relative; /* Relative positioning for overlay positioning */
+    width: 100%; 
+    height: 50vh; 
+    border: 5px solid #808080; /* Grey border around the video */
+    box-sizing: border-box; 
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
+    margin-bottom: 10px; 
 }
 
 .overlay {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    border: 2px solid white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    position: absolute; 
+    right: 20px; 
+    background-color: black; 
+    color: white; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    text-align: center; 
+    border: 2px solid white; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions for hover effects */
 }
 
-
 .overlay:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
+    background-color: white; /* White background on hover */
+    color: black; /* Black text on hover */
+    border-color: black; /* Black border on hover */
 }
 
 #video1 video, #video2 video, #video3 video {
@@ -144,8 +186,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Ensures content is centered within each container */
-    height: 100%; /* Ensures containers take full height of their parent */
-    flex: 1; /* Each takes half of the container */
+    height: 100%; 
+    flex: 1;
     padding: 0 20px; /* Adds padding inside each container */
 }
 
@@ -154,9 +196,6 @@ footer {
     width: 100%; /* Full width of their container */
     height: auto; /* Maintain aspect ratio */
 }
-
-
-
 
 
 /* Responsive adjustments */
@@ -184,20 +223,18 @@ footer {
 }
 
 
-
-
 .embedded-media {
-    width: 100%;   /* Adjust width as needed, can be in px or % */
-    height: 600px; /* Set a fixed height */
-    margin: 20px auto; /* Centering if necessary */
-    box-shadow: 0px 4px 8px rgba(240, 74, 74, 0.3); /* Optional for styling */
-    border-radius: 10px; /* Optional for rounded corners */
+    width: 100%;   
+    height: 600px; 
+    margin: 20px auto; 
+    box-shadow: 0px 4px 8px rgba(240, 74, 74, 0.3);
+    border-radius: 10px; 
     overflow: hidden; /* Ensures no overflow */
 }
 
 .embedded-media img, .embedded-media iframe {
-    width: 100%; /* Ensures full container width */
-    height: 100%; /* Ensures full container height */
+    width: 100%;
+    height: 100%; 
     object-fit: cover; /* Covers the entire area, adjust as needed */
 }
 
@@ -229,9 +266,9 @@ footer {
     position: relative;
     width: 100%;
     max-width: 600px; /* Maximum width of the slider */
-    margin: 20px auto; /* Center the slider horizontally */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-    border-radius: 10px; /* Rounded corners for aesthetics */
+    margin: 20px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; 
     overflow: hidden; /* Prevents any part of the images from overflowing */
 }
 
@@ -242,8 +279,8 @@ footer {
 
 .slider-image {
     width: 100%; /* Each image will take the full width of its container */
-    height: 400px; /* Fixed height for all images */
-    object-fit: cover; /* Ensures images cover the space, cropping as needed without distortion */
+    height: 400px; 
+    object-fit: cover; 
     display: none; /* Hide all images by default */
 }
 
@@ -265,19 +302,12 @@ footer {
 }
 
 .prev-btn {
-    left: 10px; /* Position the previous button on the left side */
+    left: 10px; 
 }
 
 .next-btn {
-    right: 10px; /* Position the next button on the right side */
+    right: 10px; 
 }
-
-
-
-
-
-
-
 
 /* GAME */
 
@@ -329,7 +359,7 @@ footer {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: #ff0000; /* Use a bright color to ensure visibility */
+    background-color: #ff0000; 
     border-radius: 50%;
     transition: transform 0.5s, opacity 0.5s; /* Transition for visual effect */
     z-index: 100; /* Make sure dots are not hidden behind other elements */
